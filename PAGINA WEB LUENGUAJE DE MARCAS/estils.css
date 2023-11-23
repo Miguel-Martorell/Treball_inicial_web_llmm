@@ -1,0 +1,99 @@
+/*Posam lla regla arroba de media srceen per a les pantalles que els paragrafs es vegin a 15 píxels.*/
+@media screen {
+    p{
+        font-size: 15px;
+    }
+}
+/*Amb el body ajustam tota la pàgina que es veu (tot el body de la pàgina), amb l'al.lineat al centre,un color blau fluix de background y la font de la lletra*/
+body{
+    text-align: center;
+    background-color: rgb(201, 246, 246);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/*header per editar tots els encapçalaments amb un bordercolor.*/
+header{
+    border: 6px solid;
+    border-color: rgb(0, 0, 0);
+}
+/*h1 per els títols més grans de color crimson*/
+h1{
+    color: crimson;
+}
+/*Abans dels li posam unee fletxes per decorar.*/
+li::before{
+    content: '⮕';
+}
+/*Després dels li posam unee fletxes per decorar.*/
+li::after{
+    content: '⬅';
+}
+/*Agafa els p dins dels th i els posa a 18px.*/
+th>p{
+    font-size: 18px;
+}
+/*a per editar els links perque no tenguin el subrayat y siguin de color negre.*/
+a{
+    text-decoration: none;
+    color: black;
+}
+/*Quan estem amunt del nav(:hover)es canvia de color.*/
+nav :hover{
+    color: rgb(218, 215, 58);
+}
+/*Possam la tabla i els requadres per dividir dins la tabla amb un border solid negre, colapsat i possa un marge de 10px en el text dins de la taula.*/
+table, th, td{
+    border: 3px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+/*A la classe paisycontinente li possam un color.*/
+.paisycontinente{
+    color: firebrick;
+}
+/*A tots els elements cite dins dels p que tengui un atribut que es el class="pelicula" lis donarem el color deeppink*/
+p[class="pelicula"]>cite{
+    color: deeppink;
+}
+/*A la classe boton li donam que no tengui subrallat, el color de fons sigui blue i el color del text chartreuse.*/
+.boton{
+    text-decoration: none;
+    background-color: blue;
+    color: chartreuse;
+}
+/*Amb el # agafem l'id anomenat izquierda i l'alineam a la esquerra*/
+#izquierda{
+    text-align: left;
+}
+/*Agafem tots els table que venen dins els div i el posam amb un marge de la esquerra de 40%.*/
+div>table{
+    margin-left: 40%;
+
+}
+/*Aquest de keyframes i l'altre d'img van relacionats amb el nom que els hem donat(animacionFotos), 
+vaig veure un vídeo per decorar les imatges amb una animació i vaig creure que quedaria bé sobretot en la pàagina de mesfotos.
+L'animació fa que quan baixes, la foto primer es veu transparent y poc a poc es lleva la opacitat i també es fa més gran(de 25 al 100% 
+del seu tamany a mesura que baixes i animation range significa que dura desde el 25 al 65% l'animació per no endarreri-se molt.*/
+@keyframes animacionFotos{
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+/*El both combina les animacions.*/
+img{
+    width: 400pt;
+    height: 320pt;
+    view-timeline-name: --imagenAnimacion;
+    view-timeline-axis: block;
+    animation-timeline: --imagenAnimacion;
+    animation-name: animacionFotos;
+    animation-range: entry 25% cover 65%;
+    animation-fill-mode: both;
+}
+
+
+
